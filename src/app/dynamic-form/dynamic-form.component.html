@@ -7,7 +7,7 @@
     <div *ngIf="config[key].type === 'select'">
       <select [formControlName]="key">
         <option disabled selected value></option>
-        <option *ngFor="let param of config[key].params">{{param}}</option>
+        <option *ngFor="let param of config[key]?.options">{{param}}</option>
       </select>
     </div>
   </div>

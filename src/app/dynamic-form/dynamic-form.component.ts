@@ -1,18 +1,19 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {DynamicFormService} from "../dynamic-form.service";
-import {HttpClientModule} from "@angular/common/http";
-import {HttpClient} from "@angular/common/http";
+import {AppComponent} from "../app.component";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-dynamic-form',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    HttpClientModule,
+    NgForOf,
+    NgIf,
   ],
   templateUrl: './dynamic-form.component.html',
-  styleUrl: './dynamic-form.component.css'
+  styleUrl: './dynamic-form.component.css',
 })
 export class DynamicFormComponent {
   @Input() config: any;
@@ -26,6 +27,7 @@ export class DynamicFormComponent {
   }
 
   createFormGroup() {
+    console.log(this.config)
     const group: {[key: string]: FormControl<any>} = {};
     for (const key in this.config) {
       if (this.config.hasOwnProperty(key)) {
