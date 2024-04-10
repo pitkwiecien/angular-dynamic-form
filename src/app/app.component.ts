@@ -14,6 +14,7 @@ export class AppComponent {
   formConfig = {
     "ala": {"type": "text"},
     "ma": {"type": "number"},
+    "mail": {"type": "email"},
     "kota": {"type": "select", "options": ["a", "b", "c"]}
   };
 }

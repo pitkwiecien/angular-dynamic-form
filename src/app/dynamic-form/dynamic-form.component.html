@@ -1,7 +1,7 @@
 <form [formGroup]="form">
   <div *ngFor="let key of Object.keys(config)">
     <label>{{key}}</label>
-    <div *ngIf="config[key].type === 'text' || config[key].type === 'number'">
+    <div *ngIf="validTypes.has(config[key].type)">
       <input [type]="form.value[key].type" [formControlName]="key">
     </div>
     <div *ngIf="config[key].type === 'select'">

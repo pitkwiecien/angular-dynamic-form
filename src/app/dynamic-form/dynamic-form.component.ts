@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {DynamicFormService} from "../dynamic-form.service";
-import {AppComponent} from "../app.component";
 import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
@@ -19,6 +18,7 @@ export class DynamicFormComponent {
   @Input() config: any;
   form: FormGroup = new FormGroup([]);
   Object = Object;
+  validTypes = new Set(["number", "text", "email"]);
 
   constructor(private fb: FormBuilder, private dynamicFormService: DynamicFormService) {}
 
