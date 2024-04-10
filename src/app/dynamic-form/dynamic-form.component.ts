@@ -27,7 +27,7 @@ export class DynamicFormComponent {
   }
 
   createFormGroup() {
-    console.log(this.config)
+    // console.log(this.config)
     const group: {[key: string]: FormControl<any>} = {};
     for (const key in this.config) {
       if (this.config.hasOwnProperty(key)) {
