@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+  <div *ngFor="let key of Object.keys(config)">
+    <label>{{key}}</label>
+    <div *ngIf="config[key].type === 'text' || config[key].type === 'number'">
+      <input [type]="form.value[key].type" [formControlName]="key">
+    </div>
+    <div *ngIf="config[key].type === 'select'">
+      <select [formControlName]="key">
+        <option disabled selected value></option>
+        <option *ngFor="let param of config[key].params">{{param}}</option>
+      </select>
+    </div>
+  </div>
+  <input type="submit" (click)="onSubmit()">
+</form>
