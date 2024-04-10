@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class DynamicFormService {
-  api = "http://example.com"
+  api = "https://example.com"
   constructor(private http: HttpClient) { }
 
   sendForm(body: any) {
